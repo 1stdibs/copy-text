@@ -18,7 +18,7 @@ CopyText.prototype = {
         }
         return _.reduce(svCopyPaths, function (text, keyPrefix) {
             return text || serverVars.get(keyPrefix + '.' + copyKey);
-        }, text);
+        }, text) || copyKey;
     },
     object: function () {
         return this._copy;

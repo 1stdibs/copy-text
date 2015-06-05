@@ -22,7 +22,7 @@ describe('copyText', function () {
         it('should an extended copy of the original', function () {
             copyText = copyText.extend({foo: "hello"});
             expect(copyText.get('foo')).toEqual('hello');
-            expect(copyText.get('bar')).not.toBeTruthy();
+            expect(copyText.get('bar')).toEqual('bar');
             copyText = copyText.extend({bar: "world"});
             expect(copyText.get('foo')).toEqual('hello');
             expect(copyText.get('bar')).toEqual('world');
