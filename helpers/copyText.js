@@ -11,14 +11,18 @@ var CopyText = function (options) {
     return this;
 };
 CopyText.prototype = {
-    get: function (copyKey) {
-        var text = this._copy[copyKey];
+    get: function (copyKey, options) {
+        var text;
+        options = _.extend({
+            passthrough: true
+        }, options);
+        text = this._copy[copyKey];
         if (text) {
             return text;
         }
         return _.reduce(svCopyPaths, function (text, keyPrefix) {
             return text || serverVars.get(keyPrefix + '.' + copyKey);
-        }, text) || copyKey;
+        }, text) || options.passthrough && copyKey;
     },
     object: function () {
         return this._copy;
