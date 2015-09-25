@@ -1,5 +1,5 @@
 "use strict";
-var serverVars = require('bunsen/helpers/serverVars');
+var serverVars = require('server-vars');
 var _ = require('underscore');
 // TODO: use a paths-approach to make it easier to search non-existant objects safely
 var svCopyPaths = [];
@@ -17,12 +17,15 @@ CopyText.prototype = {
             passthrough: true
         }, options);
         text = this._copy[copyKey];
-        if (text) {
-            return text;
+        if (undefined === text) {
+            text = _.reduceRight(svCopyPaths, function (text, keyPrefix) {
+                return text || serverVars.get(keyPrefix + '.' + copyKey);
+            }, text) || options.passthrough && copyKey;
         }
-        return _.reduce(svCopyPaths, function (text, keyPrefix) {
-            return text || serverVars.get(keyPrefix + '.' + copyKey);
-        }, text) || options.passthrough && copyKey;
+        if (options.obj) {
+            text = _.template(text)(options.obj);
+        }
+        return text;
     },
     object: function () {
         return this._copy;
