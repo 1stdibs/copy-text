@@ -1,6 +1,8 @@
 "use strict";
 var serverVars = require('server-vars');
 var _ = require('underscore');
+var requ = require('bunsen/helpers/requ');
+var endpoints = require('bunsen/libraries/endpoints');
 // TODO: use a paths-approach to make it easier to search non-existant objects safely
 var svCopyPaths = [];
 var CopyText = function (options) {
@@ -32,6 +34,12 @@ CopyText.prototype = {
     },
     extend: function (morecopy) {
         return new CopyText({copy: _.extend({}, this._copy, morecopy)});
+    },
+    load: function (file) {
+        return requ({
+            url: endpoints.staticRepo(file),
+            dataType: 'json'
+        }).then(this.extend.bind(this));
     }
 };
 
