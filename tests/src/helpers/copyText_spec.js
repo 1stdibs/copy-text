@@ -1,7 +1,7 @@
 "use strict";
 var copyTextApi = require('bunsen/helpers/copyText');
 var serverVars = require('server-vars');
-describe('copyText', function () {
+    describe('copyText', function () {
     var copyText;
     beforeEach(function () {
         copyText = copyTextApi();
