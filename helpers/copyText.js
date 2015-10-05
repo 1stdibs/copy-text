@@ -1,7 +1,7 @@
 "use strict";
 var serverVars = require('server-vars');
 var _ = require('underscore');
-var requ = require('bunsen/helpers/requ');
+var requ = require('reku');
 var endpoints = require('bunsen/libraries/endpoints');
 // TODO: use a paths-approach to make it easier to search non-existant objects safely
 var svCopyPaths = [];
