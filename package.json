@@ -1,0 +1,28 @@
+{
+  "name": "copy-text",
+  "version": "1.0.0",
+  "description": "a place for copy",
+  "main": "copy-text.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeteJodo/copy-text.git"
+  },
+  "keywords": [
+    "copy-text"
+  ],
+  "author": "1stdibs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeteJodo/copy-text/issues"
+  },
+  "homepage": "https://github.com/PeteJodo/copy-text#readme",
+  "dependencies": {
+    "dibs-endpoints": "~1.1.1",
+    "reku": "~1.1.1",
+    "server-vars": "~2.0.1",
+    "underscore": "~1.8.3"
+  }
+}

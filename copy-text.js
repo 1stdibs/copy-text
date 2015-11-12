@@ -2,8 +2,7 @@
 var serverVars = require('server-vars');
 var _ = require('underscore');
 var requ = require('reku');
-var endpoints = require('bunsen/libraries/endpoints');
-// TODO: use a paths-approach to make it easier to search non-existant objects safely
+var endpoints = require('dibs-endpoints');
 var svCopyPaths = [];
 var CopyText = function (options) {
     options = _.extend({

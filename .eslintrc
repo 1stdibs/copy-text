@@ -1,0 +1,7 @@
+{
+    "extends": [
+        "1stdibs",
+        "1stdibs/react",
+        "1stdibs/node"
+    ]
+}

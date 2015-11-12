@@ -1,0 +1,12 @@
+bunsen
+npm-debug.log
+/coverage
+.idea/
+.settings
+.project
+.DS_Store
+/vendor/
+/out/
+/bunsen_tests.xml
+node_modules
+npm-debug.log
