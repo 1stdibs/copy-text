@@ -24,6 +24,12 @@ var serverVars = require('server-vars');
         expect(copyText.get('someKeyInSvCopy')).toEqual('foo bar foo');
         expect(copyText.get('someKeyThatArrivedThroughExtend')).toEqual('bar foo baz');
     });
+    it('should default to global copy passed through addGlobalCopy', function () {
+        copyTextApi.addGlobalCopy({'someGlobalKey': 'some global val'});
+        copyText = copyText.extend({'someKeyThatArrivedThroughExtend': 'bar foo baz'});
+        expect(copyText.get('someGlobalKey')).toEqual('some global val');
+        expect(copyText.get('someKeyThatArrivedThroughExtend')).toEqual('bar foo baz');
+    });
     it('should render using a template object when options.obj is specified', function () {
         copyText = copyText.extend({fooBar: 'this <%= obj.thing %> is a template'});
         expect(copyText.get('fooBar', {obj: {thing: 'template'}})).toEqual('this template is a template');

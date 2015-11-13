@@ -4,6 +4,7 @@ var _ = require('underscore');
 var requ = require('reku');
 var endpoints = require('dibs-endpoints');
 var svCopyPaths = [];
+var globalCopy = {};
 var CopyText = function (options) {
     options = _.extend({
         copy: {}
@@ -17,7 +18,7 @@ CopyText.prototype = {
         options = _.extend({
             passthrough: true
         }, options);
-        text = this._copy[copyKey];
+        text = this._copy[copyKey] || globalCopy[copyKey];
         if (undefined === text) {
             text = _.reduceRight(svCopyPaths, function (text, keyPrefix) {
                 return text || serverVars.get(keyPrefix + '.' + copyKey);
@@ -50,6 +51,6 @@ module.exports.addGlobalSVPath = function (svCopyPath) {
     return module.exports;
 };
 module.exports.addGlobalCopy = function (copyObj) {
-    _.extend(this._copy, copyObj);
+    _.extend(globalCopy, copyObj);
     return module.exports;
 };

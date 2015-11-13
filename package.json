@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PeteJodo/copy-text.git"
+    "url": "git+https://github.com/1stdibs/copy-text.git"
   },
   "keywords": [
     "copy-text"
@@ -16,9 +16,9 @@
   "author": "1stdibs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PeteJodo/copy-text/issues"
+    "url": "https://github.com/1stdibs/copy-text/issues"
   },
-  "homepage": "https://github.com/PeteJodo/copy-text#readme",
+  "homepage": "https://github.com/1stdibs/copy-text#readme",
   "dependencies": {
     "dibs-endpoints": "~1.1.1",
     "reku": "~1.1.1",
@@ -26,6 +26,7 @@
     "underscore": "~1.8.3"
   },
   "devDependencies": {
-    "dibslint": "~1.2.2"
+    "dibslint": "~1.2.2",
+    "jasmine": "~2.3.0"
   }
 }
