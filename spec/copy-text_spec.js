@@ -1,5 +1,5 @@
 "use strict";
-var copyTextApi = require('bunsen/helpers/copyText');
+var copyTextApi = require('../copy-text');
 var serverVars = require('server-vars');
     describe('copyText', function () {
     var copyText;
