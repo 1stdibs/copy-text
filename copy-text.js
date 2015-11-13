@@ -49,3 +49,7 @@ module.exports.addGlobalSVPath = function (svCopyPath) {
     svCopyPaths.push(svCopyPath);
     return module.exports;
 };
+module.exports.addGlobalCopy = function (copyObj) {
+    _.extend(this._copy, copyObj);
+    return module.exports;
+};
