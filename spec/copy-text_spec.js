@@ -24,11 +24,20 @@ var serverVars = require('server-vars');
         expect(copyText.get('someKeyInSvCopy')).toEqual('foo bar foo');
         expect(copyText.get('someKeyThatArrivedThroughExtend')).toEqual('bar foo baz');
     });
-    it('should default to global copy passed through addGlobalCopy', function () {
-        copyTextApi.addGlobalCopy({'someGlobalKey': 'some global val'});
-        copyText = copyText.extend({'someKeyThatArrivedThroughExtend': 'bar foo baz'});
-        expect(copyText.get('someGlobalKey')).toEqual('some global val');
-        expect(copyText.get('someKeyThatArrivedThroughExtend')).toEqual('bar foo baz');
+    it('should prefer copy more recently added to the global object', function () {
+        copyTextApi.addGlobalCopy({copyKey: 'copyAddedFirst'});
+        copyText = copyTextApi();
+        expect(copyText.get('copyKey')).toEqual('copyAddedFirst');
+        copyTextApi.addGlobalCopy({copyKey: 'copyAddedSecond'});
+        copyText = copyTextApi();
+        expect(copyText.get('copyKey')).toEqual('copyAddedSecond');
+    });
+    it('should prefer copy on the instance over the global object', function () {
+        copyTextApi.addGlobalCopy({copyKey: 'copyOnTheGlobalObject'});
+        copyText = copyTextApi();
+        expect(copyText.get('copyKey')).toEqual('copyOnTheGlobalObject');
+        copyText = copyText.extend({copyKey: 'copyOnTheInstance'});
+        expect(copyText.get('copyKey')).toEqual('copyOnTheInstance');
     });
     it('should render using a template object when options.obj is specified', function () {
         copyText = copyText.extend({fooBar: 'this <%= obj.thing %> is a template'});
