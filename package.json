@@ -1,0 +1,32 @@
+{
+  "name": "copy-text",
+  "version": "1.0.0",
+  "description": "a place for copy",
+  "main": "copy-text.js",
+  "scripts": {
+    "test": "jasmine JASMINE_CONFIG_PATH=jasmine.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1stdibs/copy-text.git"
+  },
+  "keywords": [
+    "copy-text"
+  ],
+  "author": "1stdibs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1stdibs/copy-text/issues"
+  },
+  "homepage": "https://github.com/1stdibs/copy-text#readme",
+  "dependencies": {
+    "dibs-endpoints": "~1.1.1",
+    "reku": "~1.1.1",
+    "server-vars": "~2.0.1",
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {
+    "dibslint": "~1.2.2",
+    "jasmine": "~2.3.0"
+  }
+}

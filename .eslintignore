@@ -1,0 +1,14 @@
+node_modules/**/*
+assets/js/thirdParty/**/*
+assets/js/global/plugins/jquery.ellipsis.js
+assets/js/global/plugins/jquery.mobile-accordion.js
+assets/js/global/plugins/jquery.nested-accordion.js
+assets/js/global/plugins/jquery.common-sizes.js
+assets/js/tests/lib/doubleclick/dc.js
+assets/js/tests/lib/ga/gpt.js
+assets/js/tests/lib/jasmine-jquery.js
+assets/js/tests/lib/jquery.min.js
+assets/js/tests/lib/jquery/1.9.1/jquery.js
+assets/js/global/plugins/commonjs/jquery.mobile-accordion.js
+assets/js/global/plugins/commonjs/jquery.mobile-accordion2.js
+assets/js/global/modules/commonjs/slider/PriceSlider.js
