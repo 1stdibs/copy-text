@@ -68,4 +68,14 @@ describe('copyText', function () {
         expect(require('../')().get('copyKey')).toEqual('copyOnTheGlobalObject');
         expect(require('../')().get('someKeyInSvCopy')).toEqual('foo bar foo');
     });
+    it('should find nested copy owned by copy text (not SV) via dot-delimited key', function () {
+        copyText = copyText.extend({
+            textExtend: {
+                nextLevel: {
+                    blah: 'test'
+                }
+            }
+        });
+        expect(copyText.get('textExtend.nextLevel.blah')).toEqual('test');
+    });
 });
