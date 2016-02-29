@@ -21,6 +21,7 @@
   "homepage": "https://github.com/1stdibs/copy-text#readme",
   "dependencies": {
     "lodash.assign": "~4.0.0",
+    "lodash.get": "~4.1.2",
     "lodash.reduceright": "~4.0.0",
     "lodash.template": "~4.0.0",
     "reku": "~1.1.1",

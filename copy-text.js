@@ -3,6 +3,7 @@ var serverVars = require('server-vars');
 var assign = require('lodash.assign');
 var reduceRight = require('lodash.reduceright');
 var template = require('lodash.template');
+var lodashGet = require('lodash.get');
 var GLOBALCOPYKEY = '__COPYTEXT_GLOBAL_COPY__';
 var SVPATHSKEY = '__COPYTEXT_SV_COPY_PATHS__';
 var globalCopy = global[GLOBALCOPYKEY] = global[GLOBALCOPYKEY] || {};
@@ -20,7 +21,7 @@ CopyText.prototype = {
         options = assign({
             passthrough: true
         }, options);
-        text = this._copy[copyKey] || globalCopy[copyKey];
+        text = lodashGet(this._copy, copyKey) || lodashGet(globalCopy, copyKey);
         if (undefined === text) {
             text = reduceRight(svCopyPaths, function (text, keyPrefix) {
                 return text || serverVars.get(keyPrefix + '.' + copyKey);
