@@ -33,7 +33,7 @@ CopyText.prototype = {
         templateVars = assign({}, options.obj, {
             _copy: this.get.bind(this)
         });
-        text = template(text)(templateVars);
+        text = text ? template(text)(templateVars) : null;
         return text;
     },
     object: function () {
