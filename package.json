@@ -1,6 +1,6 @@
 {
   "name": "copy-text",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "a tool for getting copy text from server-vars and static objects",
   "main": "copy-text.js",
   "scripts": {
